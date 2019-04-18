@@ -39,7 +39,7 @@
                                         <input type="number" name="number" class="form-control" 
                                         placeholder="{{ trans('messages.number') }}">
                                         @if($errors->has('number'))
-                                            <li style="color: red">
+                                            <span style="color: red">
                                             {{ $errors->first('number') }}
                                         @endif
                                     </td>

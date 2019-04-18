@@ -27,7 +27,7 @@
                                         <input type="text" name="username" class="form-control" 
                                         placeholder="{{ trans('messages.account') }}">
                                         @if($errors->has('username'))
-                                            <li style="color: red">
+                                            <span style="color: red">
                                             {{ $errors->first('username') }}
                                         @endif
                                     </td>
@@ -37,7 +37,7 @@
                                     <td>
                                         <input type="text" name="email" class="form-control" placeholder="Email">
                                          @if($errors->has('email'))
-                                            <li style="color: red">
+                                            <span style="color: red">
                                             {{ $errors->first('email') }}
                                         @endif
                                     </td>

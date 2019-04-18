@@ -10,4 +10,5 @@ return [
     'numberUpdate' => 'This number must be more than zero',
     'freeUser' => 'None free user now, please create user',
     'addStore' => 'Add Store Successfull !',
+    'oldPassword' => 'Your old password not correct !',
 ];

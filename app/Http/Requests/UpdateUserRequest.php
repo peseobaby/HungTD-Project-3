@@ -25,7 +25,7 @@ class UpdateUserRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'email' => 'required|email',
+            'oldpassword' => 'required',
             'password' => 'required',
             'password_confirmation' => 'required|same:password',
         ];

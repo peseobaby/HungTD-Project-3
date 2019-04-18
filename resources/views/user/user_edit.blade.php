@@ -27,18 +27,19 @@
                                         <input type="text" name="name" class="form-control" 
                                         placeholder="{{ trans('messages.name') }}">
                                         @if($errors->has('name'))
-                                            <li style="color: red">
+                                            <span style="color: red">
                                             {{ $errors->first('name') }}
                                         @endif
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Email <span class="errors" style="color: red" >*</span></td>
+                                    <td>{{ trans('messages.oldpassword') }}<span class="errors" style="color: red" >*</span></td>
                                     <td>
-                                        <input type="text" name="email" class="form-control" placeholder="Email">
-                                        @if($errors->has('email'))
-                                            <li style="color: red">
-                                            {{ $errors->first('email') }}
+                                        <input type="password" name="oldpassword" class="form-control" 
+                                        placeholder="{{ trans('messages.oldpassword') }}">
+                                        @if($errors->has('oldpassword'))
+                                            <span style="color: red">
+                                            {{ $errors->first('oldpassword') }}
                                         @endif
                                     </td>
                                 </tr>
@@ -49,7 +50,7 @@
                                         <input type="password" name="password" class="form-control" 
                                         placeholder="{{ trans('messages.password') }}">
                                         @if($errors->has('password'))
-                                            <li style="color: red">
+                                            <span style="color: red">
                                             {{ $errors->first('password') }}
                                         @endif
                                     </td>
@@ -61,7 +62,7 @@
                                         <input type="password" name="password_confirmation" class="form-control" 
                                         placeholder="{{ trans('messages.password_confirmation') }}">
                                         @if($errors->has('password_confirmation'))
-                                            <li style="color: red">
+                                            <span style="color: red">
                                             {{ $errors->first('password_confirmation') }}
                                         @endif
                                     </td>

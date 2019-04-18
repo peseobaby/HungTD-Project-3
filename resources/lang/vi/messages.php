@@ -8,6 +8,7 @@ return [
     'home' => 'Danh sách quản lý',
     'account' => 'Tên đăng nhập',
     'name' => 'Tên quản lý',
+    'oldpassword' => 'Mật khẩu cũ',
     'password' => 'Mât khẩu',
     'password_confirmation' => 'Xác thực mật khẩu',
     'store' => 'Kho hàng',

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Store;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 use App\Exports\UsersExport;
 use App\Mail\ResetPassword;
 use App\Mail\ConfirmPassword;
@@ -67,12 +68,16 @@ class HomeController extends Controller
     {
         $data = $request->all();
         $user = User::find($id);
-        $user->name = $data['name'];
-        $user->email = $data['email'];
-        $user->password = bcrypt($data['password']);
-        $user->new = true;
-        $user->save();
-        return view('auth\login')->with('alert', trans('alert.updateUser'));
+        if(Hash::check($data['oldpassword'], $user->password)) {
+            $user->name = $data['name'];
+            $user->password = bcrypt($data['password']);
+            $user->new = true;
+            $user->save();
+            return redirect()->route('home')->with('alert', trans('alert.updateUser'));
+        } else {
+            return redirect()->back()->with('alert', trans('alert.oldPassword'));
+        }
+
     }
 
     public function resetForm()

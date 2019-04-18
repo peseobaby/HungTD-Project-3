@@ -10,4 +10,5 @@ return [
     'numberUpdate' => 'Số hàng phải lớn hơn 0',
     'freeUser' => 'Không có quản lý nào rảnh, hãy tạo mới',
     'addStore' => 'Thêm mới kho hàng thành công',
+    'oldPassword' => 'Mật khẩu cũ không đúng',
 ];
