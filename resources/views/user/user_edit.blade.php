@@ -24,7 +24,8 @@
                                 <tr>
                                     <td>{{ trans('messages.name') }}<span class="errors" style="color: red" >*</span></td>
                                     <td>
-                                        <input type="text" name="name" class="form-control" placeholder="{{ trans('messages.name') }}">
+                                        <input type="text" name="name" class="form-control" 
+                                        placeholder="{{ trans('messages.name') }}">
                                         @if($errors->has('name'))
                                             <li style="color: red">
                                             {{ $errors->first('name') }}
@@ -42,9 +43,11 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>{{ trans('messages.password') }}<span class="errors" style="color: red" >*</span></td>
+                                    <td>{{ trans('messages.password') }}<span class="errors" style="color: red" >*
+                                    </span></td>
                                     <td>
-                                        <input type="password" name="password" class="form-control" placeholder="{{ trans('messages.password') }}">
+                                        <input type="password" name="password" class="form-control" 
+                                        placeholder="{{ trans('messages.password') }}">
                                         @if($errors->has('password'))
                                             <li style="color: red">
                                             {{ $errors->first('password') }}

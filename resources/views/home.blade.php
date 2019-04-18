@@ -46,7 +46,8 @@
                         </table>
                         <br></br>
                         <div class="a" style="margin: auto"></div>
-                            <a href="{{ route('user.add') }}"><button class="addUser">{{ trans('messages.addUser') }}</button></a> 
+                            <a href="{{ route('user.add') }}"><button class="addUser">{{ trans('messages.addUser') }}
+                            </button></a> 
                             <a href="{{ route('store.add') }}"><button class="addStore">{{ trans('messages.addStore') }}
                             </button></a>
                             <a href="{{ route('export') }}"><button class="edit">{{ trans('messages.export') }}</button></a>

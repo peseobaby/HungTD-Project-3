@@ -20,23 +20,23 @@ class UsersExport implements FromCollection, WithMapping, WithHeadings
     }
 
     public function map($user): array
-    {	
-    	if ($user->store_id != null) {
-	    	return [
-	    		$user->username,
-	    		$user->email,
-	            $user->name,
-	            $user->store_id,
-	    		$user->store->name,
-	    	];
-   		} else {
-   			return [
-	    		$user->username,
-	    		$user->email,
-	            $user->name,
-	            $user->store_id,
-	    	];
-   		}
+    {
+        if ($user->store_id != null) {
+            return [
+                $user->username,
+                $user->email,
+                $user->name,
+                $user->store_id,
+                $user->store->name,
+            ];
+        } else {
+            return [
+                $user->username,
+                $user->email,
+                $user->name,
+                $user->store_id,
+            ];
+        }
     }
     
     public function headings(): array

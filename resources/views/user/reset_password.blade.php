@@ -14,6 +14,7 @@
                     <div class="content">
                         <h1>{{ trans('messages.rs') }}</h1>
                         <a href="{{ route('home') }}">{{ trans('messages.back') }}</a>
+                        <br></br>
                         <form action="{{ route('resetpassword') }}" method="post">
                             {{ csrf_field() }}
                             {{ method_field('post') }}

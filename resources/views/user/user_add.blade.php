@@ -23,7 +23,8 @@
                                  <tr>
                                     <td>{{ trans('messages.account') }}<span class="errors" style="color: red" >*</span></td>
                                     <td>
-                                        <input type="text" name="username" class="form-control" placeholder="{{ trans('messages.account') }}">
+                                        <input type="text" name="username" class="form-control" 
+                                        placeholder="{{ trans('messages.account') }}">
                                         @if($errors->has('username'))
                                             <li style="color: red">
                                             {{ $errors->first('username') }}

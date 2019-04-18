@@ -24,10 +24,10 @@ class UpdateUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'username' => 'required',
-            'email|email' => 'required',
+            'name' => 'required',
+            'email' => 'required|email',
             'password' => 'required',
-            'password_confirmation' => 'required!same:password',
+            'password_confirmation' => 'required|same:password',
         ];
     }
 }

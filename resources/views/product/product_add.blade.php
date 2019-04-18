@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">{{ trans('messages.user') }}</div>
                 <div class="card-body">
-                     @if (session('alert'))
+                    @if (session('alert'))
                         <div class="alert alert-success">
                             {{ session('alert') }}
                         </div>
@@ -16,7 +16,8 @@
                         <h1>{{ trans('messages.addProduct') }}</h1>
                     </div>
                     <div class="content">
-                        <a href="{{ route('store.show', Auth::user()->store_id) }}" class="button">{{ trans('messages.back') }}</a><br/><br/>
+                        <a href="{{ route('store.show', Auth::user()->store_id) }}" class="button">
+                        {{ trans('messages.back') }}</a><br/><br/>
                         <form method="post" action="{{ route('new.add', Auth::user()->store_id) }}" role="form">
                             {{ csrf_field() }}
                             <table width="50%" cellspacing="0" cellpadding="10">

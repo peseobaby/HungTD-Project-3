@@ -32,7 +32,8 @@
                                         <td>{{ $product->id }}</td>
                                         <td>{{ $product->name }}</td>
                                         <td>{{ $product->number }}</td>
-                                        <td><a href="{{ route('product.add', $product->id) }}"><button> {{ trans('messages.addNumber') }}</button>
+                                        <td><a href="{{ route('product.add', $product->id) }}"><button> 
+                                        {{ trans('messages.addNumber') }}</button>
                                         </a></td>
                                     </tr>
                                 @endforeach 

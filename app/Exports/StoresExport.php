@@ -16,23 +16,23 @@ class StoresExport implements FromCollection, WithMapping, WithHeadings
     * @return \Illuminate\Support\Collection
     */
     public function collection()
-    {	
-    	$store_id = Auth::user()->store_id;
+    {
+        $store_id = Auth::user()->store_id;
         return Product::where('store_id', $store_id)->get();
     }
 
     public function map($product): array
-    {	
-    	if ($product != null) {
-	    	return [
-	    		$product->id,
-	    		$product->name,
-	            $product->number,
-	    	];
-   		} else {
-   			return [
-	    	];
-   		}
+    {
+        if ($product != null) {
+            return [
+                $product->id,
+                $product->name,
+                $product->number,
+            ];
+        } else {
+            return [
+            ];
+        }
     }
 
     public function headings(): array

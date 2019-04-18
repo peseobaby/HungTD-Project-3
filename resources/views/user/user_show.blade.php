@@ -39,10 +39,6 @@
                                     @endif
                                 </td>
                             </tr>
-                            <tr>
-                                <td></td>
-                                <td><a href="{{ route('user.edit', $user->id) }}"><button>{{ trans('messages.updateUser') }}</button></a></td>
-                            </tr>
                         </table>
                     </div>  
                 </div>

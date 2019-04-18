@@ -21,9 +21,11 @@
                             {{ csrf_field() }}
                             <table width="50%" cellspacing="0" cellpadding="10">
                                  <tr>
-                                    <td>{{ trans('messages.storeName') }}<span class="errors" style="color: red" >*</span></td>
+                                    <td>{{ trans('messages.storeName') }}<span class="errors" style="color: red" >*
+                                    </span></td>
                                     <td>
-                                        <input type="text" name="name" class="form-control" placeholder="{{ trans('messages.storeName') }}">
+                                        <input type="text" name="name" class="form-control" 
+                                        placeholder="{{ trans('messages.storeName') }}">
                                         @if($errors->has('name'))
                                             <li style="color: red">
                                             {{ $errors->first('name') }}
@@ -33,11 +35,11 @@
                                 <tr>
                                     <td>{{ trans('messages.storeManager') }}<span class="errors" style="color: red" >*</span></td>
                                     <td>
-                                    	<select name="user">
-                                    		@foreach($users as $user)
-                                    			<option value="{{ $user->username }}">{{ $user->username }}</option>
-                                    		@endforeach
-                                    	</select>
+                                        <select name="user">
+                                            @foreach($users as $user)
+                                                <option value="{{ $user->username }}">{{ $user->username }}</option>
+                                            @endforeach
+                                        </select>
                                     </td>
                                 <tr>
                                     <td></td>

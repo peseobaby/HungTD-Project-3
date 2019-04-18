@@ -16,7 +16,8 @@
                         <h1>{{ trans('messages.addNumber') }}</h1>
                     </div>
                     <div class="content">
-                        <a href="{{ route('store.show', Auth::user()->store_id) }}" class="button">{{ trans('messages.back') }}</a><br/><br/>
+                        <a href="{{ route('store.show', Auth::user()->store_id) }}" class="button">
+                        {{ trans('messages.back') }}</a><br/><br/>
                         <form method="post" action="{{ route('update.product', $product->id) }}" role="form">
                             {{ csrf_field() }}
                             <table width="50%" cellspacing="0" cellpadding="10">
@@ -27,7 +28,8 @@
                                 <tr>
                                     <td>{{ trans('messages.number') }}<span class="errors" style="color: red" >*</span></td>
                                     <td>
-                                        <input type="number" name="number" class="form-control" placeholder="{{ trans('messages.number') }}">
+                                        <input type="number" name="number" class="form-control" 
+                                        placeholder="{{ trans('messages.number') }}">
                                         @if($errors->has('number'))
                                             <li style="color: red">
                                             {{ $errors->first('number') }}

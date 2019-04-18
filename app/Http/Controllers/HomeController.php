@@ -43,7 +43,7 @@ class HomeController extends Controller
     }
     public function addUser()
     {
-        return view('user/user_add');        
+        return view('user/user_add');
     }
 
     public function createUser(CreateUserRequest $request)
@@ -54,7 +54,7 @@ class HomeController extends Controller
         $username = $data['username'];
         User::create($data);
         \Mail::to($data['email'])->send(new ConfirmPassword($username, $password));
-        return redirect()->route('home');
+        return redirect()->route('home')->with('alert', 'Đã thêm quản lý mới');
     }
 
     public function editUser($id)
@@ -63,7 +63,7 @@ class HomeController extends Controller
     }
 
     public function updateUser(UpdateUserRequest $request, $id)
-    {   
+    {
         $data = $request->all();
         $user = User::find($id);
         $user->name = $data['name'];
@@ -75,7 +75,7 @@ class HomeController extends Controller
     }
 
     public function resetForm()
-    {   
+    {
         $users = User::where('username', '<>', 'admin')->get();
         return view('user\reset_password',['users' => $users]);
     }
@@ -91,7 +91,7 @@ class HomeController extends Controller
             $userid->save();
             \Mail::to($userid->email)->send(new ResetPassword($userid, $userPassword));
         }
-         return redirect()->route('form.reset')->with('alert', 'Reset mật khẩu thành công');
+        return redirect()->route('form.reset')->with('alert', 'Reset mật khẩu thành công');
     }
 
     public function export()
