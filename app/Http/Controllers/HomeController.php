@@ -55,7 +55,7 @@ class HomeController extends Controller
         User::create($data);
         \Mail::to($data['email'])
                ->send(new ConfirmPassword($username, $password));
-        return redirect()->route('home')->with('alert', 'Đã thêm quản lý mới');
+        return redirect()->route('home')->with('alert', trans('alert.createUser'));
     }
 
     public function editUser($id)
@@ -72,7 +72,7 @@ class HomeController extends Controller
         $user->password = bcrypt($data['password']);
         $user->new = true;
         $user->save();
-        return view('auth\login')->with('alert', 'Đã cập nhật');
+        return view('auth\login')->with('alert', trans('alert.updateUser'));
     }
 
     public function resetForm()
@@ -94,7 +94,7 @@ class HomeController extends Controller
                    ->send(new ResetPassword($userid, $userPassword));
         }
         return redirect()->route('form.reset')
-                         ->with('alert', 'Reset mật khẩu thành công');
+                         ->with('alert', trans('alert.resetPassword'));
     }
 
     public function export()

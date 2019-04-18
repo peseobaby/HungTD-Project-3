@@ -19,7 +19,7 @@ class StoreController extends Controller
                        ->get();
         if ($users->first() == null) {
             return redirect('home')
-            ->with('alert', 'Không có quản lý nào rảnh, hãy tạo mới');
+            ->with('alert', trans('alert.freeUser'));
         } else {
             return view('store/store_create', compact('users'));
         }
@@ -32,7 +32,7 @@ class StoreController extends Controller
         $store->save();
         $user = User::where('username', $request->user)
                       ->update(['store_id' => $store->id]);
-        return redirect('home')->with('alert', 'Cập nhật thành công');
+        return redirect('home')->with('alert', trans('alert.addStore'));
     }
 
     public function showStore($id)

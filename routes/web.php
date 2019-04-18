@@ -39,5 +39,4 @@ Auth::routes();
 	Route::get('product/sub/{id}', 'ProductController@subProduct')->name('product.sub');
 	Route::post('product/sub/{id}', 'ProductController@updateSub')->name('update.sub');
 	Route::get('product/update/{id}', 'ProductController@updateProduct')->name('product.add');
-	Route::post('product/update/{id}', 'ProductController@productAdd')->name('update.product');	
-
+	Route::post('product/update/{id}', 'ProductController@productAdd')->name('update.product');

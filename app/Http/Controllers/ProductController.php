@@ -22,7 +22,7 @@ class ProductController extends Controller
         $newproduct->number = $request->number;
         $newproduct->store_id = Auth::user()->store_id;
         $newproduct->save();
-        return redirect()->back()->with('alert', 'Đã thêm sản phẩm vào kho');
+        return redirect()->back()->with('alert', trans('alert.createProduct'));
     }
     public function subProduct($id)
     {
@@ -39,10 +39,9 @@ class ProductController extends Controller
             $product->number = $number - $request->number;
             $product->save();
             return redirect()->route('store.show', Auth::user()->store_id)
-            ->with('alert', 'Xuất hàng thành công');
+            ->with('alert', trans('alert.subProduct'));
         } else {
-            return redirect()->back()->with('alert', 
-            'Số cần nhập phải lớn hơn 0 và nhỏ hơn số hàng đang có');
+            return redirect()->back()->with('alert', trans('alert.number'));
         }
     }
 
@@ -60,10 +59,10 @@ class ProductController extends Controller
             $product->number = $number + $request->number;
             $product->save();
             return redirect()->route('store.show', Auth::user()->store_id)
-            ->with('alert', 'Cập nhật thành công');
+                             ->with('alert', trans('alert.updateProduct'));
         } else {
             return redirect()->back()
-                             ->with('alert', 'Số lượng phải lớn hơn 0');
+                             ->with('alert', trans('alert.numberUpdate'));
         }
     }
 }
