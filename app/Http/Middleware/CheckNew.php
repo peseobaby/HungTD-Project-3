@@ -17,7 +17,7 @@ class CheckNew
     public function handle($request, Closure $next)
     {   
         $new = Auth::user()->new;
-        if($new == 1) {
+        if($new == true) {
             return $next($request);
         } else {
             return redirect()->route('user.edit', ['id' => Auth::id()]);

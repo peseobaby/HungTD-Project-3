@@ -40,7 +40,7 @@ class User extends Authenticatable
 
     public function store()
     {
-         return $this->hasOne('App\Store','id', 'store_id');
+         return $this->hasOne('App\Store', 'id', 'store_id');
     }
 
     public static function create($data)

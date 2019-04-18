@@ -33,7 +33,8 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>{{ trans('messages.storeManager') }}<span class="errors" style="color: red" >*</span></td>
+                                    <td>{{ trans('messages.storeManager') }}<span class="errors" style="color: red" >*
+                                    </span></td>
                                     <td>
                                         <select name="user">
                                             @foreach($users as $user)

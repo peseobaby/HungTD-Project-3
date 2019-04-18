@@ -31,7 +31,7 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {   
+    {
         $users = User::with('store')->where('role', 'user')->get();
         return view('home', ['users' => $users]);
     }
@@ -53,7 +53,8 @@ class HomeController extends Controller
         $data['password'] = bcrypt($password);
         $username = $data['username'];
         User::create($data);
-        \Mail::to($data['email'])->send(new ConfirmPassword($username, $password));
+        \Mail::to($data['email'])
+               ->send(new ConfirmPassword($username, $password));
         return redirect()->route('home')->with('alert', 'Đã thêm quản lý mới');
     }
 
@@ -89,9 +90,11 @@ class HomeController extends Controller
             $userid = $user->find($id);
             $userid->password = bcrypt($userPassword);
             $userid->save();
-            \Mail::to($userid->email)->send(new ResetPassword($userid, $userPassword));
+            \Mail::to($userid->email)
+                   ->send(new ResetPassword($userid, $userPassword));
         }
-        return redirect()->route('form.reset')->with('alert', 'Reset mật khẩu thành công');
+        return redirect()->route('form.reset')
+                         ->with('alert', 'Reset mật khẩu thành công');
     }
 
     public function export()

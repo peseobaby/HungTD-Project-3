@@ -42,7 +42,7 @@ class ProductController extends Controller
             ->with('alert', 'Xuất hàng thành công');
         } else {
             return redirect()->back()->with('alert', 
-            'số lượng không hợp lệ, số cần nhập phải lớn hơn 0 và nhỏ hơn số hàng đang có');
+            'Số cần nhập phải lớn hơn 0 và nhỏ hơn số hàng đang có');
         }
     }
 
@@ -62,7 +62,8 @@ class ProductController extends Controller
             return redirect()->route('store.show', Auth::user()->store_id)
             ->with('alert', 'Cập nhật thành công');
         } else {
-            return redirect()->back()->with('alert', 'Số lượng phải lớn hơn 0');
+            return redirect()->back()
+                             ->with('alert', 'Số lượng phải lớn hơn 0');
         }
     }
 }

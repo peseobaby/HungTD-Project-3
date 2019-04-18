@@ -33,7 +33,8 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>{{ trans('messages.number') }} <span class="errors" style="color: red" >*</span></td>
+                                    <td>{{ trans('messages.number') }} <span class="errors" style="color: red" >*</span>
+                                    </td>
                                     <td>
                                         <input type="number" name="number" class="form-control" 
                                         placeholder="{{ trans('messages.number') }}">
@@ -44,7 +45,8 @@
                                     </td>
                                 <tr>
                                     <td></td>
-                                    <td><button type="submit" class="button">{{ trans('messages.subProduct') }}</button></td>
+                                    <td><button type="submit" class="button">{{ trans('messages.subProduct') }}</button>
+                                    </td>
                                 </tr>
                             </table>
                         </form>

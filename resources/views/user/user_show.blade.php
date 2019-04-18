@@ -33,7 +33,8 @@
                                 <td>
                                     @if($user->store_id != null)
                                         <b>{{ $user->store->name }}</b>
-                                        <a href="{{ route('store.show', $user->store_id) }}"><button class="edit">{{ trans('messages.storeShow') }}</button></a>
+                                        <a href="{{ route('store.show', $user->store_id) }}"><button class="edit">
+                                        {{ trans('messages.storeShow') }}</button></a>
                                     @else 
                                         {{ trans('messages.storeMessage') }}
                                     @endif

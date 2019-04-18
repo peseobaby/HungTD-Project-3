@@ -21,7 +21,8 @@
                             {{ csrf_field() }}
                             <table width="50%" cellspacing="0" cellpadding="10">
                                  <tr>
-                                    <td>{{ trans('messages.account') }}<span class="errors" style="color: red" >*</span></td>
+                                    <td>{{ trans('messages.account') }}<span class="errors" style="color: red" >*</span>
+                                    </td>
                                     <td>
                                         <input type="text" name="username" class="form-control" 
                                         placeholder="{{ trans('messages.account') }}">

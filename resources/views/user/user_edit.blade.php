@@ -55,7 +55,8 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>{{ trans('messages.password_confirmation') }}<span class="errors" style="color: red" >*</span></td>
+                                    <td>{{ trans('messages.password_confirmation') }}
+                                    <span class="errors" style="color: red" >*</span></td>
                                     <td>
                                         <input type="password" name="password_confirmation" class="form-control" 
                                         placeholder="{{ trans('messages.password_confirmation') }}">
@@ -67,7 +68,8 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td><button type="submit" class="button">{{ trans('messages.updateUser') }}</button></td>
+                                    <td><button type="submit" class="button">{{ trans('messages.updateUser') }}</button>
+                                    </td>
                                 </tr>
                             </table>
                         </form>
