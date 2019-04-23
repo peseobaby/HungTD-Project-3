@@ -12,7 +12,7 @@ class ProductController extends Controller
 {
     public function addNewProduct($id)
     {
-        return view('product/product_add');
+        return view('product.product_add');
     }
 
     public function newAdd(AddNewProductRequest $request)
@@ -27,7 +27,7 @@ class ProductController extends Controller
     public function subProduct($id)
     {
         $products = Product::where('store_id', $id)->get();
-        return view('product/product_sub', compact('products'));
+        return view('product.product_sub', compact('products'));
     }
 
     public function updateSub(AddProductRequest $request)
@@ -48,7 +48,7 @@ class ProductController extends Controller
     public function updateProduct($id)
     {
         $product = Product::find($id);
-        return view('product/product_update', compact('product'));
+        return view('product.product_update', compact('product'));
     }
 
     public function productAdd(AddProductRequest $request, $id)
@@ -64,5 +64,13 @@ class ProductController extends Controller
             return redirect()->back()
                              ->with('alert', trans('alert.numberUpdate'));
         }
+    }
+
+    public function ajaxPost(Request $request)
+    {
+        $product = Product::where('name', $request->name)
+        ->where('store_id', Auth::user()->store_id)->first();
+        $number = $product->number;
+        return $number;
     }
 }

@@ -12,8 +12,8 @@ class StoreTableSeeder extends Seeder
     public function run()
     {
         DB::table('stores')->insert([
-        	'id' => '1',
-        	'name' => 'Kho máy tính',
+            'id' => '1',
+            'name' => 'Kho máy tính',
         ]);
     }
 }

@@ -40,7 +40,7 @@ class HomeController extends Controller
     public function showUser($id)
     {
         $user = User::with('store')->where('id', $id)->first();
-        return view('user/user_show', ['user' => $user]);
+        return view('user.user_show', ['user' => $user]);
     }
     public function addUser()
     {
@@ -61,7 +61,7 @@ class HomeController extends Controller
 
     public function editUser($id)
     {
-        return view('user\user_edit', ['id' => $id, 'user' => Auth::user()]);
+        return view('user.user_edit', ['id' => $id, 'user' => Auth::user()]);
     }
 
     public function updateUser(UpdateUserRequest $request, $id)
@@ -83,7 +83,7 @@ class HomeController extends Controller
     public function resetForm()
     {
         $users = User::where('username', '<>', 'admin')->get();
-        return view('user\reset_password',['users' => $users]);
+        return view('user.reset_password', ['users' => $users]);
     }
 
     public function resetPassword(Request $request)

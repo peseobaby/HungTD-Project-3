@@ -33,7 +33,7 @@ class ConfirmPassword extends Mailable
      */
     public function build()
     {
-        return $this->view('mail\mail_confirmation')
+        return $this->view('mail.mail_confirmation')
         ->with(['user' => $this->user, 'password' => $this->password]);
     }
 }

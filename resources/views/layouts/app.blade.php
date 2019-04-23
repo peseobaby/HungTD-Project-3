@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css">
 
+
 </head>
 <body>
     <div id="app">
@@ -96,4 +97,5 @@
         </main>
     </div>
 </body>
+@yield('js')
 </html>

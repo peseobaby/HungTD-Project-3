@@ -30,4 +30,5 @@ return [
     'productChoose' => 'Chọn một sản phẩm',
     'passwordRequest' => 'Quên mật khẩu ?',
     'remember' => 'Ghi nhớ đăng nhập ',
+    'maxcount' => 'Số sản phẩm tối đa',
 ];

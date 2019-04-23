@@ -21,7 +21,7 @@ class StoreController extends Controller
             return redirect('home')
             ->with('alert', trans('alert.freeUser'));
         } else {
-            return view('store/store_create', compact('users'));
+            return view('store.store_create', compact('users'));
         }
     }
 
@@ -39,7 +39,7 @@ class StoreController extends Controller
     {
         $products = Product::where('store_id', $id)->get();
         $store = Store::find($id);
-        return view('store/store_show', 
+        return view('store.store_show', 
                ['store' => $store, 'products' =>$products]);
     }
 

@@ -21,15 +21,22 @@
                         <form method="post" action="{{ route('product.sub', Auth::user()->store_id) }}" role="form">
                             {{ csrf_field() }}
                             <table width="50%" cellspacing="0" cellpadding="10">
-                                 <tr>
+                                <tr>
                                     <td>{{ trans('messages.productChoose') }} <span class="errors" style="color: red" >*
                                     </span></td>
                                     <td>
-                                        <select name="product">
+                                        <select name="product" required="required">
+                                            <option value="">Chọn sản phẩm</option>
                                             @foreach($products as $product)
                                                 <option value="{{ $product->name }}">{{ $product->name }}</option>
                                             @endforeach
                                         </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>{{ trans('messages.maxcount') }}</td>
+                                    <td>
+                                        <input type="number" name="maxcount" id="maxcount" readonly="readonly">
                                     </td>
                                 </tr>
                                 <tr>
@@ -56,4 +63,29 @@
         </div>
     </div>
 </div>
+@endsection
+@section('js')
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $("select[name='product']").change(function(e){
+        e.preventDefault();
+        var productName = $(this).val();
+        if(productName != '') {
+            $.ajax({
+                type:'POST',
+                url:'/ajax',
+                data:{name:productName},
+                success:function(data){
+                    $("#maxcount").val(data);
+                }
+            });
+        } else {
+            $("#maxcount").val('');
+        }
+    });
+</script>
 @endsection

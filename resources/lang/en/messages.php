@@ -30,4 +30,5 @@ return [
     'productChoose' => 'Choose One product',
     'passwordRequest' => 'Forgot your password ?',
     'remember' => 'Remember Password ',
+    'maxcount' => 'Max Number',
 ];
